@@ -1,25 +1,41 @@
 package com.javaWebServices.entities;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
 import javax.persistence.Id;
 
-public class User {
+@Entity
+@Table(name = "User")
+public class User  implements Serializable  {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;
-	
+	@Column(name = "Name")
 	private String name;
-	private String lastName;
-	private String email;
-	private int age;
+	@Column(name = "Surname")
+	private String surname;
+	@Column(name = "UserName")
+	private String userName;
+	@Column(name = "Password")
 	private String password;
-		 
+	@Column(name = "EmailAddress")
+	private String emailAddress;
+	@Column(name = "PhoneNumber")
+	private String phoneNumber;
+	
 	public User() {
 	}
-	
+
 	public String getId() {
 		return id;
 	}
-	
+
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -31,29 +47,21 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public String getLastName() {
-		return lastName;
+
+	public String getSurname() {
+		return surname;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {
@@ -62,5 +70,21 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 }

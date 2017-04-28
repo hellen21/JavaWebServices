@@ -2,16 +2,16 @@ package com.javaWebServices.services;
 
 import java.util.List;
 
-import com.javaWebServices.Dtos.UserDto;
+import com.javaWebServices.entities.User;
 
 public interface UserService {
-	UserDto create(UserDto user);
+	User create(User user);
 	 
-	UserDto delete(String id);
+	User delete(String id);
  
-    List<UserDto> findAll();
+    List<User> findAll();
  
-    UserDto findById(String id);
+    User findById(String id);
  
-    UserDto update(UserDto user);
+    User update(User user);
 }

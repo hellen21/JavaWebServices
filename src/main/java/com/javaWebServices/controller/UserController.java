@@ -5,13 +5,15 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.javaWebServices.Dtos.UserDto;
+import com.javaWebServices.entities.User;
 import com.javaWebServices.services.UserService;
 
 @RestController
@@ -27,28 +29,27 @@ public class UserController {
     }
  
     @RequestMapping(method = RequestMethod.POST)
-    //@ResponseStatus(HttpStatus.CREATED)
-    UserDto create(@RequestBody @Valid UserDto userEntry) {
+    User create(@RequestBody @Valid User userEntry) {
         return service.create(userEntry);
     }
  
     @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
-    UserDto delete(@PathVariable("id") String id) {
+    User delete(@PathVariable("id") String id) {
         return service.delete(id);
     }
  
     @RequestMapping(method = RequestMethod.GET)
-    List<UserDto> findAll() {
+    List<User> findAll() {
         return service.findAll();
     }
  
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
-    UserDto findById(@PathVariable("id") String id) {
+    User findById(@PathVariable("id") String id) {
         return service.findById(id);
     }
  
     @RequestMapping(value = "{id}", method = RequestMethod.PUT)
-    UserDto update(@RequestBody @Valid UserDto todoEntry) {
+    User update(@RequestBody @Valid User todoEntry) {
         return service.update(todoEntry);
     }
 }
