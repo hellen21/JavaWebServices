@@ -1,18 +1,11 @@
 package com.javaWebServices.repository;
 
-import java.util.List;
 
-import org.springframework.data.repository.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.javaWebServices.entities.User;
 
-public interface UserRepository extends Repository<User, String> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
-	void delete(User deleted);
-	
-	List<User> findAll();
- 
-	User findOne(String id);
- 
-	User save(User saved);
+
 }

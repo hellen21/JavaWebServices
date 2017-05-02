@@ -1,42 +1,39 @@
 package com.javaWebServices.entities;
-
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Id;
 
+
 @Entity
-@Table(name = "User")
-public class User  implements Serializable  {
+@Table(name = "app_user", schema ="public")
+public class User{
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String id;
-	@Column(name = "Name")
+	@Column(name = "id")
+	private Long id;
+	@Column(name = "name")
 	private String name;
-	@Column(name = "Surname")
+	@Column(name = "surname")
 	private String surname;
-	@Column(name = "UserName")
+	@Column(name = "user_name")
 	private String userName;
-	@Column(name = "Password")
+	@Column(name = "password")
 	private String password;
-	@Column(name = "EmailAddress")
+	@Column(name = "email_address")
 	private String emailAddress;
-	@Column(name = "PhoneNumber")
+	@Column(name = "phone_number")
 	private String phoneNumber;
 	
 	public User() {
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
