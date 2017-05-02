@@ -2,6 +2,7 @@ package com.javaWebServices.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Id;
 
@@ -11,7 +12,8 @@ import javax.persistence.Id;
 public class User{
 	
 	@Id
-	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false)
 	private Long id;
 	@Column(name = "name")
 	private String name;

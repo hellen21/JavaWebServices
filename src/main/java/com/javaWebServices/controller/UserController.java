@@ -20,12 +20,13 @@ public class UserController {
 	private UserRepository userRepository;
 
 	@GET
+	@Produces("application/json")
 	public List<User> findAll() {
 		return userRepository.findAll();
 	}
 	
 	@POST
-    @Produces("application/json")
+	@Produces("application/json")
 	public User create(User userEntry) {
 		userEntry.getId();
         return userRepository.save(userEntry);
