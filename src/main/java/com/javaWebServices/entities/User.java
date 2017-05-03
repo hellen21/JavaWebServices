@@ -13,7 +13,7 @@ public class User{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
+	@Column(name = "id")
 	private Long id;
 	@Column(name = "name")
 	private String name;
@@ -30,12 +30,10 @@ public class User{
 	
 	public User() {
 	}
-
 	
-	public User(Long id, String name, String surname, String userName, String password, String emailAddress,
+	public User(String name, String surname, String userName, String password, String emailAddress,
 			String phoneNumber) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.userName = userName;
@@ -43,7 +41,6 @@ public class User{
 		this.emailAddress = emailAddress;
 		this.phoneNumber = phoneNumber;
 	}
-
 
 	public Long getId() {
 		return id;
