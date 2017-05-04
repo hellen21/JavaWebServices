@@ -31,9 +31,12 @@ public class User{
 	public User() {
 	}
 	
-	public User(String name, String surname, String userName, String password, String emailAddress,
+	
+
+	public User(Long id, String name, String surname, String userName, String password, String emailAddress,
 			String phoneNumber) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.userName = userName;
