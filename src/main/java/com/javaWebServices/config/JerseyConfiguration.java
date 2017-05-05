@@ -4,7 +4,9 @@
 package com.javaWebServices.config;
 
 import org.glassfish.jersey.server.ResourceConfig;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.stereotype.Component;
 
 import com.javaWebServices.controller.UserController;
@@ -18,5 +20,6 @@ public class JerseyConfiguration extends ResourceConfig {
 		register(UserController.class);
 
 	}
+	
 
 }
